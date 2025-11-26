@@ -8,14 +8,14 @@
   </head>
   <body class="home-page">
     <header>
-      <div class="moving-text">
+      <div>
         <marquee>
           <h1>
-            <p style="color: rgba(209, 164, 17, 0.959)">
-              Kỷ Niệm Cấp 3 - Lớp 12A4
+            <p style="color: rgba(214, 104, 1, 0.959)">
+              Kỷ Niệm Cấp 3 - Lớp 12A4-K58-MDA
             </p>
-          </h1></marquee
-        >
+          </h1>
+        </marquee>
       </div>
       <div
         style="
@@ -37,80 +37,83 @@
 
     <nav>
       <ul>
-        <li><a href="#" onclick="showPage('overview')">Trang chủ</a></li>
-        <li><a href="#" onclick="showPage('members')">Thành viên</a></li>
-        <li><a href="#" onclick="showPage('achievements')">Thành tựu</a></li>
-        <li><a href="#" onclick="showPage('prize')">Giải thưởng</a></li>
-        <li><a href="#" onclick="showPage('top1')">Những cái nhất</a></li>
+        <li><button onclick="showPage('overview')">Trang chủ</button></li>
+        <li><button onclick="showPage('members')">Thành viên</button></li>
+        <li><button onclick="showPage('achievements')">Thành tựu</button></li>
+        <li><button onclick="showPage('prize')">Giải thưởng</button></li>
+        <li><button onclick="showPage('top1')">Những cái nhất</button></li>
       </ul>
     </nav>
+    <main>
+      <section id="overview" class="page">
+        <h2>📘 Trang chủ</h2>
+        <h3>
+          <strong>
+            Chào mừng đến với trang web lưu giữ những kỷ niệm đáng nhớ của lớp
+            12A4!</strong
+          >
+        </h3>
+        <img
+          src="../picture/z7136166825876_f1db11d3385d0e3f074231ecd268d22d.jpg"
+          height="800"
+          width="1200"
+          alt="Ảnh tập thể lớp"
+        />
+        <p>
+          Page chính thức
+          <a href="https://www.facebook.com/profile.php?id=61582183157737"
+            >A4-K58_MDA</a
+          >
+        </p>
+      </section>
 
-    <section id="overview" class="page">
-      <h2>📘 Trang chủ</h2>
-      <h3>
-        <strong>
-          Chào mừng đến với trang web lưu giữ những kỷ niệm đáng nhớ của lớp
-          12A4!</strong
-        >
-      </h3>
-      <img
-        src="../picture/z7136166825876_f1db11d3385d0e3f074231ecd268d22d.jpg"
-        height="800"
-        width="1200"
-        alt="Ảnh tập thể lớp"
-      />
-      <!-- <p>
-        Page chính thức
-        <a href="https://www.facebook.com/profile.php?id=61582183157737"
-          >A4-K58_MDA</a
-        >
-      </p>  -->
-    </section>
-    <!-- <input type="button" value="Video đặc sắc" onclick ="document.body.background='lightblue "> </input> -->
-    <div
-      style="
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 30px;
-      "
-    >
-      <button onclick="window.location.href='../video.html'">Video lớp</button>
-    </div>
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 30px;
+        "
+      >
+        <button onclick="window.location.href='../video.html'">
+          Video lớp
+        </button>
+      </div>
 
-    <section id="members" class="page" style="display: none">
-      <h2>👥 Thành viên</h2>
-      <form id="member-form">
-        <input type="text" id="name" placeholder="Nhập tên..." required />
-        <input type="date" id="dob" required />
-        <button type="submit">Xem thông tin</button>
-      </form>
-      <div id="member-info"></div>
-    </section>
+      <section id="members" class="page" style="display: none">
+        <h2>👥 Thành viên</h2>
+        <form id="member-form">
+          <input type="text" id="name" placeholder="Nhập tên..." required />
+          <input type="date" id="dob" required />
+          <button type="submit">Xem thông tin</button>
+        </form>
+        <div id="member-info"></div>
+      </section>
 
-    <section id="achievements" class="page" style="display: none">
-      <h2>🏆 Thành tích</h2>
-      <ul>
-        <li>Giải Nhất học sinh giỏi Toán cấp tp</li>
-        <li>Top 1 cuộc thi kéo co</li>
-        <li>100% đỗ tốt nghiệp cấp 3</li>
-      </ul>
-    </section>
+      <section id="achievements" class="page" style="display: none">
+        <h2>🏆 Thành tích</h2>
+        <ul>
+          <li>Giải Nhất học sinh giỏi Toán cấp tp</li>
+          <li>Top 1 cuộc thi kéo co</li>
+          <li>100% đỗ tốt nghiệp cấp 3</li>
+        </ul>
+      </section>
 
-    <section id="prize" class="page" style="display: none">
-      <h2>🎖️ Giải thưởng đạt được</h2>
-      <ul>
-        <li>Giải đặc biệt văn nghệ toàn trường</li>
-      </ul>
-    </section>
+      <section id="prize" class="page" style="display: none">
+        <h2>🎖️ Giải thưởng đạt được</h2>
+        <ul>
+          <li>Giải đặc biệt văn nghệ toàn trường</li>
+        </ul>
+      </section>
 
-    <section id="top1" class="page" style="display: none">
-      <h2>🌟 Những cái nhất</h2>
-      <ul>
-        <li>Sở hữu top sever Toán</li>
-        <li>Gáy to nhất</li>
-      </ul>
-    </section>
+      <section id="top1" class="page" style="display: none">
+        <h2>🌟 Những cái nhất</h2>
+        <ul>
+          <li>Sở hữu top sever Toán</li>
+          <li>Gáy to nhất</li>
+        </ul>
+      </section>
+    </main>
     <section>
       <footer>
         <p>&copy; Khoá K58- Lớp 12A4 - Made with ❤️</p>
@@ -120,6 +123,20 @@
       <a href="#">Về đầu</a>
     </section>
 
-    <script src="script.js"></script>
+    <script>
+      // Hiển thị trang theo id (ví dụ: 'members')
+      function showPage(pageId) {
+        document.querySelectorAll(".page").forEach((p) => {
+          p.style.display = "none";
+        });
+        const page = document.getElementById(pageId);
+        if (page) page.style.display = "block";
+      }
+
+      // Tùy chọn: giữ trang "overview" hiển thị khi tải
+      document.addEventListener("DOMContentLoaded", () => {
+        showPage("overview");
+      });
+    </script>
   </body>
 </html>
