@@ -121,3 +121,36 @@ body.video-page {
   color: white;
   /* ... */
 }
+/* ...existing code... */
+
+/* Responsive fixes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Make nav wrap on small screens */
+nav ul {
+  flex-wrap: wrap;
+}
+
+/* Reduce paddings on small screens */
+@media (max-width: 768px) {
+  header .moving-text { font-size: 1.2em; }
+  nav ul li { margin: 8px; }
+  section { padding: 12px; }
+  video { width: 100%; height: auto; }
+  img { width: 100%; height: auto; }
+}
+
+/* ...existing code... */
