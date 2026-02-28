@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!-- ...existing code... -->
+<!doctype html>
 <html lang="vi">
   <head>
     <meta charset="UTF-8" />
@@ -10,10 +11,8 @@
     <header>
       <div>
         <marquee>
-          <h1>
-            <p style="color: rgba(214, 104, 1, 0.959)">
-              Kỷ Niệm Cấp 3 - Lớp 12A4-K58-MDA
-            </p>
+          <h1 style="color: rgba(192, 4, 20, 0.959)">
+            Kỷ Niệm Cấp 3 - Lớp 12A4-K58-MDA
           </h1>
         </marquee>
       </div>
@@ -25,12 +24,12 @@
           height: auto;
         "
       >
-        <p style="color: rgb(161, 78, 23)">Năm: 2022 - 2025</p>
+        <p style="color: rgb(19, 42, 114)">Năm: 2022 - 2025</p>
       </div>
       <hr />
       <h6>
-        <p style="color: rgb(155, 131, 131)" id="visitor-count">
-          Lượt truy cập: <span id="counter" >0</span>
+        <p style="color: rgb(7, 5, 5)" id="visitor-count">
+          Lượt truy cập: <span id="counter">0</span>
         </p>
       </h6>
     </header>
@@ -39,9 +38,9 @@
       <ul>
         <li><button onclick="showPage('overview')">Trang chủ</button></li>
         <li><button onclick="showPage('members')">Thành viên</button></li>
-        <li><button onclick="showPage('achievements')">Thành tựu</button></li>
-        <li><button onclick="showPage('prize')">Giải thưởng</button></li>
-        <li><button onclick="showPage('top1')">Những cái nhất</button></li>
+        <li><button onclick="showPage('achievements')">Kỉ niệm</button></li>
+        <li><button onclick="showPage('prize')">Học tập</button></li>
+        <li><button onclick="showPage('top1')">Game</button></li>
         <li><button onclick="showPage('Video')">Video</button></li>
       </ul>
     </nav>
@@ -51,21 +50,22 @@
         <h3>
           <strong>
             Chào mừng đến với trang web lưu giữ những kỷ niệm đáng nhớ của lớp
-            12A4!</strong
-          >
+            12A4!
+          </strong>
         </h3>
         <img
           src="picture/z7136166825876_f1db11d3385d0e3f074231ecd268d22d.jpg"
-          height="800"
-          width="1200"
           alt="Ảnh tập thể lớp"
         />
-        <!-- <p>
-          Page chính thức
-          <a href="https://www.facebook.com/profile.php?id=61582183157737"
-            >A4-K58_MDA</a
-          >
-        </p> -->
+
+        <!-- Showcase: 3 profile highlight -->
+        <div class="showcase">
+          <h3>Trưng bày Profile Thành tích (Top 3)</h3>
+          <div class="profile-grid" id="home-showcase">
+            <!-- JS sẽ chèn 3 card ở đây -->
+          </div>
+          <p class="caption">Ba thành tích tiêu biểu của lớp — click để xem chi tiết.</p>
+        </div>
       </section>
 
       <div
@@ -75,86 +75,119 @@
           align-items: center;
           height: 30px;
         "
-      >
-        <button onclick="href='video.html'">Video lớp</button>
-      </div>
+      ></div>
 
       <section id="members" class="page" style="display: none">
-        <h2>👥 Thành viên</h2>
+        <h2>👥 Thành viên — Sách hồ sơ</h2>
+        <p class="caption">5 trang đầu: profile tác giả (thầy cô). Sau đó 51 profile học sinh.</p>
 
-        <form id="member-form">
-          <input type="text" id="name" placeholder="Nhập tên..." required />
-          <input type="date" id="dob" required />
-          <button type="submit">Xem thông tin</button>
-        </form>
-        <div id="member-info"></div>
+        <div class="book-controls">
+          <button id="book-prev">‹ Trước</button>
+          <span>Trang <span id="book-page-num">1</span> / <span id="book-page-total">56</span></span>
+          <button id="book-next">Sau ›</button>
+        </div>
+
+        <div class="book" id="book-container">
+          <!-- JS sẽ render trang sách tại đây -->
+        </div>
+
+        <div class="book-jump">
+          <label for="jump-to">Đến trang:</label>
+          <input id="jump-to" type="number" min="1" />
+          <button id="jump-go">Đi</button>
+        </div>
       </section>
 
       <section id="achievements" class="page" style="display: none">
-        <h2>🏆 Thành tích</h2>
-        <ul>
-          <li>Giải Nhất học sinh giỏi Toán cấp tp</li>
-          <li>Top 1 cuộc thi kéo co</li>
-          <li>100% đỗ tốt nghiệp cấp 3</li>
-        </ul>
+        <h2>🏆 Kỉ niệm & Lịch</h2>
+
+        <nav class="subnav">
+          <button class="subtab" data-tab="grade10">Lớp 10</button>
+          <button class="subtab" data-tab="grade11">Lớp 11</button>
+          <button class="subtab" data-tab="grade12">Lớp 12</button>
+        </nav>
+
+        <div id="tab-content">
+          <!-- JS sẽ chèn nội dung cho từng lớp -->
+        </div>
+
+        <div class="timeline" id="timeline">
+          <!-- JS sẽ chèn timeline sự kiện -->
+        </div>
+
+        <div class="countdown">
+          <h4>Đếm ngược đến kỳ thi tiếp theo</h4>
+          <div id="exam-countdown">-- : -- : -- : --</div>
+          <p class="caption">THPT 01/06, HSA đợt 1: 07/03, đợt 2: 21/03</p>
+        </div>
       </section>
 
       <section id="prize" class="page" style="display: none">
-        <h2>🎖️ Giải thưởng đạt được</h2>
-        <ul>
-          <li>Giải đặc biệt văn nghệ toàn trường</li>
-        </ul>
+        <h2>🎖️ Học tập & Liên kết</h2>
+        <div class="links-area">
+          <h4>Links học tập</h4>
+          <ul id="study-links">
+            <!-- JS hoặc admin chèn link ở đây -->
+            <li><a href="https://khanacademy.org" target="_blank">Khan Academy</a></li>
+            <li><a href="https://voh.com.vn" target="_blank">Tài liệu lớp</a></li>
+          </ul>
+        </div>
+
+        <div class="achievement-grid" id="modern-achievements">
+          <!-- JS sẽ render hiển thị thành tích kiểu hiện đại -->
+        </div>
       </section>
 
       <section id="top1" class="page" style="display: none">
-        <h2>🌟 Những cái nhất</h2>
-        <ul>
-          <li>Sở hữu top sever Toán</li>
-          <li>Gáy to nhất</li>
-        </ul>
+        <h2>🌟 Game & Xem bói</h2>
+
+        <div class="games">
+          <h4>Chơi nhanh (mở nếu trang cho phép iframe)</h4>
+          <div class="game-frames">
+            <div class="game-item">
+              <iframe src="https://playsnake.org" title="Snake" loading="lazy"></iframe>
+              <a href="https://playsnake.org" target="_blank">Mở ở tab mới</a>
+            </div>
+            <div class="game-item">
+              <iframe src="https://papergames.io/en/2-player/uno" title="Uno" loading="lazy"></iframe>
+              <a href="https://papergames.io" target="_blank">Mở ở tab mới</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="horoscope">
+          <h4>Xem bói tử vi</h4>
+          <form id="horoscope-form">
+            <label>Ngày sinh: <input type="date" id="birthdate" required /></label>
+            <button type="submit">Xem</button>
+          </form>
+          <div id="horoscope-result"></div>
+        </div>
       </section>
 
       <section id="Video" class="page" style="display: none">
         <h2>Văn nghệ 60 năm</h2>
         <fieldset>
-          <video controls src="video/7209893732354.mp4 " alt="video lớp">
-            <source src="movie.mp4" type="video/p4" />
-            <source src="movie.ogg" type="video/ogg" />
+          <video controls src="video/7209893732354.mp4" aria-label="video lớp">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
           </video>
         </fieldset>
         <hr />
         <h2><strong>Một đàn bò</strong></h2>
         <fieldset>
-          <video controls src="video/7241713114026.mp4" alt="video lớp">
-            <source src="movie.mp4" type="video/p4" />
-            <source src="movie.ogg" type="video/ogg" />
+          <video controls src="video/7241713114026.mp4" aria-label="video lớp">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
           </video>
         </fieldset>
       </section>
     </main>
+
     <section>
       <footer>
         <p>&copy; Khoá K58- Lớp 12A4 - Made with ❤️</p>
       </footer>
     </section>
-    <section>
-      <a href="#">Về đầu</a>
-    </section>
 
-    <script>
-      // Hiển thị trang theo id (ví dụ: 'members')
-      function showPage(pageId) {
-        document.querySelectorAll(".page").forEach((p) => {
-          p.style.display = "none";
-        });
-        const page = document.getElementById(pageId);
-        if (page) page.style.display = "block";
-      }
-
-      // Tùy chọn: giữ trang "overview" hiển thị khi tải
-      document.addEventListener("DOMContentLoaded", () => {
-        showPage("overview");
-      });
-    </script>
+    <script src="scrift.js"></script>
   </body>
 </html>
