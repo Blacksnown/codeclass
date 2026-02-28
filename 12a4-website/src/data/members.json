@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "name": "Nguyễn Văn A",
+    "role": "Học sinh",
+    "bio": "Một học sinh chăm chỉ và luôn nỗ lực trong học tập.",
+    "photo": "path/to/photo_a.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Trần Thị B",
+    "role": "Học sinh",
+    "bio": "Thích tham gia các hoạt động ngoại khóa và thể thao.",
+    "photo": "path/to/photo_b.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Lê Văn C",
+    "role": "Học sinh",
+    "bio": "Yêu thích nghệ thuật và sáng tạo.",
+    "photo": "path/to/photo_c.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Phạm Thị D",
+    "role": "Học sinh",
+    "bio": "Đam mê khoa học và công nghệ.",
+    "photo": "path/to/photo_d.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Nguyễn Văn E",
+    "role": "Giáo viên",
+    "bio": "Giáo viên dạy Toán với nhiều năm kinh nghiệm.",
+    "photo": "path/to/photo_e.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Trần Thị F",
+    "role": "Giáo viên",
+    "bio": "Giáo viên dạy Văn, yêu thích việc truyền đạt kiến thức.",
+    "photo": "path/to/photo_f.jpg"
+  }
+]

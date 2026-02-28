@@ -1,0 +1,29 @@
+{
+  "name": "12a4-website",
+  "version": "1.0.0",
+  "description": "A website to commemorate the class 12A4 - K58 - MDA.",
+  "main": "src/index.html",
+  "scripts": {
+    "start": "live-server src",
+    "build": "echo 'Build process not defined yet.'",
+    "test": "echo 'No tests defined.'"
+  },
+  "keywords": [
+    "12A4",
+    "K58",
+    "MDA",
+    "website",
+    "commemoration"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
+  "devDependencies": {},
+  "homepage": "https://yourwebsite.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/12a4-website.git"
+  }
+}

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kỷ Niệm Cấp 3 - Lớp 12A4-K58-MDA</title>
+    <link rel="stylesheet" href="styles/base.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/components.css" />
+  </head>
+  <body class="home-page">
+    <header>
+      <!-- Include header component -->
+      <div id="header-container"></div>
+    </header>
+
+    <nav>
+      <!-- Include navigation component -->
+      <div id="nav-container"></div>
+    </nav>
+
+    <main>
+      <section id="overview" class="page">
+        <h2>📘 Trang chủ</h2>
+        <h3>
+          <strong>
+            Chào mừng đến với trang web lưu giữ những kỷ niệm đáng nhớ của lớp
+            12A4!
+          </strong>
+        </h3>
+        <img
+          src="picture/z7136166825876_f1db11d3385d0e3f074231ecd268d22d.jpg"
+          alt="Ảnh tập thể lớp"
+        />
+
+        <div class="showcase">
+          <h3>Trưng bày Profile Thành tích (Top 3)</h3>
+          <div class="profile-grid" id="home-showcase">
+            <!-- JS sẽ chèn 3 card ở đây -->
+          </div>
+          <p class="caption">Ba thành tích tiêu biểu của lớp — click để xem chi tiết.</p>
+        </div>
+      </section>
+
+      <section id="members" class="page" style="display: none">
+        <h2>👥 Thành viên — Sách hồ sơ</h2>
+        <p class="caption">5 trang đầu: profile tác giả (thầy cô). Sau đó 51 profile học sinh.</p>
+        <div class="book-controls">
+          <button id="book-prev">‹ Trước</button>
+          <span>Trang <span id="book-page-num">1</span> / <span id="book-page-total">56</span></span>
+          <button id="book-next">Sau ›</button>
+        </div>
+        <div class="book" id="book-container"></div>
+        <div class="book-jump">
+          <label for="jump-to">Đến trang:</label>
+          <input id="jump-to" type="number" min="1" />
+          <button id="jump-go">Đi</button>
+        </div>
+      </section>
+
+      <section id="achievements" class="page" style="display: none">
+        <h2>🏆 Kỉ niệm & Lịch</h2>
+        <nav class="subnav">
+          <button class="subtab" data-tab="grade10">Lớp 10</button>
+          <button class="subtab" data-tab="grade11">Lớp 11</button>
+          <button class="subtab" data-tab="grade12">Lớp 12</button>
+        </nav>
+        <div id="tab-content"></div>
+        <div class="timeline" id="timeline"></div>
+        <div class="countdown">
+          <h4>Đếm ngược đến kỳ thi tiếp theo</h4>
+          <div id="exam-countdown">-- : -- : -- : --</div>
+          <p class="caption">THPT 01/06, HSA đợt 1: 07/03, đợt 2: 21/03</p>
+        </div>
+      </section>
+
+      <section id="prize" class="page" style="display: none">
+        <h2>🎖️ Học tập & Liên kết</h2>
+        <div class="links-area">
+          <h4>Links học tập</h4>
+          <ul id="study-links">
+            <li><a href="https://khanacademy.org" target="_blank">Khan Academy</a></li>
+            <li><a href="https://voh.com.vn" target="_blank">Tài liệu lớp</a></li>
+          </ul>
+        </div>
+        <div class="achievement-grid" id="modern-achievements"></div>
+      </section>
+
+      <section id="top1" class="page" style="display: none">
+        <h2>🌟 Game & Xem bói</h2>
+        <div class="games">
+          <h4>Chơi nhanh (mở nếu trang cho phép iframe)</h4>
+          <div class="game-frames">
+            <div class="game-item">
+              <iframe src="https://playsnake.org" title="Snake" loading="lazy"></iframe>
+              <a href="https://playsnake.org" target="_blank">Mở ở tab mới</a>
+            </div>
+            <div class="game-item">
+              <iframe src="https://papergames.io/en/2-player/uno" title="Uno" loading="lazy"></iframe>
+              <a href="https://papergames.io" target="_blank">Mở ở tab mới</a>
+            </div>
+          </div>
+        </div>
+        <div class="horoscope">
+          <h4>Xem bói tử vi</h4>
+          <form id="horoscope-form">
+            <label>Ngày sinh: <input type="date" id="birthdate" required /></label>
+            <button type="submit">Xem</button>
+          </form>
+          <div id="horoscope-result"></div>
+        </div>
+      </section>
+
+      <section id="Video" class="page" style="display: none">
+        <h2>Văn nghệ 60 năm</h2>
+        <fieldset>
+          <video controls src="video/7209893732354.mp4" aria-label="video lớp">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+          </video>
+        </fieldset>
+        <hr />
+        <h2><strong>Một đàn bò</strong></h2>
+        <fieldset>
+          <video controls src="video/7241713114026.mp4" aria-label="video lớp">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+          </video>
+        </fieldset>
+      </section>
+    </main>
+
+    <footer>
+      <!-- Include footer component -->
+      <div id="footer-container"></div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/ui.js"></script>
+    <script src="scripts/analytics.js"></script>
+  </body>
+</html>

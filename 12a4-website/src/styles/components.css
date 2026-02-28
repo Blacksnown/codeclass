@@ -1,0 +1,90 @@
+/12a4-website/12a4-website/src/styles/components.css
+
+/* Styles for buttons */
+button {
+  background-color: rgba(192, 4, 20, 0.959);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: rgba(150, 0, 0, 0.8);
+}
+
+/* Styles for profile cards */
+.profile-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  text-align: center;
+}
+
+.profile-card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+/* Styles for the showcase section */
+.showcase {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.showcase h3 {
+  width: 100%;
+  text-align: center;
+}
+
+/* Styles for links */
+.links-area {
+  margin: 20px 0;
+}
+
+.links-area a {
+  color: rgba(19, 42, 114);
+  text-decoration: none;
+}
+
+.links-area a:hover {
+  text-decoration: underline;
+}
+
+/* Styles for the countdown timer */
+.countdown {
+  background-color: rgba(240, 240, 240, 0.8);
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.countdown h4 {
+  margin: 0 0 10px;
+}
+
+/* Styles for the game frames */
+.game-frames {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.game-item {
+  margin: 10px;
+  text-align: center;
+}
+
+.game-item iframe {
+  border: none;
+  width: 300px;
+  height: 200px;
+}
