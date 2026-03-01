@@ -4,52 +4,6 @@
 .showcase {
   padding: 12px 0;
 }
-.profile-grid {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.profile-card {
-  width: 240px;
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-}
-.profile-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-/* Book */
-.book {
-  min-height: 260px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-}
-.book-page-card {
-  max-width: 700px;
-  width: 100%;
-  background: #fafafa;
-  border-radius: 8px;
-  padding: 16px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  text-align: center;
-}
-.book-page-card img {
-  width: 220px;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 8px;
-}
 .book-controls {
   display: flex;
   gap: 12px;
@@ -150,4 +104,270 @@ p&copy {
   text-align: center;
   margin: 0;
   background-color: #ccc;
+}
+/* ...existing code... */
+
+/* Theme variables + modern UI */
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --muted: #6b7280;
+  --text: #0f1724;
+  --accent: #0066ff;
+  --accent-2: #00b894;
+  --glass: rgba(255, 255, 255, 0.6);
+  --card-shadow: 0 6px 18px rgba(12, 15, 25, 0.08);
+  --radius: 12px;
+}
+
+/* Page base */
+body {
+  background: linear-gradient(180deg, #f8fbff 0%, var(--bg) 100%);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header */
+header {
+  background: linear-gradient(
+    90deg,
+    rgba(221, 222, 224, 0.95),
+    rgba(199, 212, 210, 0.95)
+  );
+  color: #fff;
+  padding: 18px;
+  box-shadow: var(--card-shadow);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+header p,
+header h1 {
+  margin: 6px 0;
+}
+
+/* Moving text (replace marquee visually) */
+.moving-text {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 700;
+  white-space: nowrap;
+  animation: moveText 18s linear infinite;
+}
+@keyframes moveText {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* Nav */
+nav {
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: transparent;
+}
+nav ul {
+  gap: 14px;
+  flex-wrap: wrap;
+}
+nav ul li button {
+  background: rgba(206, 9, 9, 0.11);
+  color: #110d0d;
+  border: 0;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(2, 6, 23, 0.12);
+}
+nav ul li button:hover,
+nav ul li button:focus {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.14);
+}
+
+/* Main container */
+main {
+  max-width: 1200px;
+  margin: 18px auto;
+  padding: 0 16px;
+}
+
+/* Section cards */
+section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), var(--surface));
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: var(--card-shadow);
+}
+
+/* Accent headings */
+section h2 {
+  color: var(--text);
+  border-left: 4px solid var(--accent);
+  padding-left: 12px;
+  margin-bottom: 12px;
+}
+
+/* Buttons global */
+button,
+.btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition:
+    background 0.15s ease,
+    transform 0.12s ease;
+}
+button.secondary {
+  background: var(--accent-2);
+}
+button:hover {
+  transform: translateY(-2px);
+  opacity: 0.98;
+}
+
+/* Cards & grid improvements */
+.profile-grid {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.profile-card {
+  width: 260px;
+  background: linear-gradient(180deg, #4108dd, #fbfdff);
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 8px 24px rgba(10, 20, 50, 0.06);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+  cursor: pointer;
+}
+.profile-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(40, 70, 158, 0.12);
+}
+.profile-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Book (profile viewer) */
+.book {
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.book-page-card {
+  max-width: 720px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(9, 18, 33, 0.06);
+  text-align: center;
+  background: linear-gradient(180deg, #4cb804, #7f807d);
+}
+.book-page-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 6px solid rgba(0, 0, 0, 0.03);
+  margin-bottom: 12px;
+}
+
+/* Timeline */
+.timeline-item {
+  background: linear-gradient(180deg, #ee0d0d, #fbfdff);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Achievement card modern style */
+.achievement-card {
+  width: 280px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.achievement-card img {
+  height: 160px;
+  object-fit: cover;
+}
+
+/* Countdown style */
+.countdown #exam-countdown {
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 10px 12px;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 102, 255, 0.06),
+    rgba(80, 175, 156, 0.06)
+  );
+  border-radius: 10px;
+  display: inline-block;
+}
+
+/* Forms */
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6eef8;
+  background: #b39292;
+  box-shadow: inset 0 1px 0 rgba(10, 20, 50, 0.02);
+  margin-top: 6px;
+}
+
+/* Footer */
+footer {
+  background: transparent;
+  color: var(--muted);
+  padding: 18px 0;
+}
+
+/* Responsive tweaks */
+@media (max-width: 860px) {
+  .profile-card {
+    width: calc(50% - 24px);
+  }
+}
+@media (max-width: 520px) {
+  .profile-card {
+    width: 100%;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
+.hero-image {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 12px;
 }
