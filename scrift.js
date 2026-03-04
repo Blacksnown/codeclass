@@ -111,7 +111,7 @@ const authors = [
   },
 ];
 
-const students = Array.from({ length: 51 }).map((_, i) => {
+const students = Array.from({ length: 2 }).map((_, i) => {
   const no = i + 1;
   return {
     id: no,
