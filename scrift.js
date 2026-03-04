@@ -17,7 +17,9 @@ function updateVisitorCount() {
   const namespace = "a4-k58-mda";
   const key = "visits";
 
-  fetch(`https://api.countapi.xyz/hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`)
+  fetch(
+    `https://api.countapi.xyz/hit/${encodeURIComponent(namespace)}/${encodeURIComponent(key)}`,
+  )
     .then((res) => res.json())
     .then((data) => {
       if (data && data.value !== undefined) {
@@ -38,9 +40,24 @@ function updateVisitorCount() {
 
 /* ---------- Homepage showcase ---------- */
 const showcaseProfiles = [
-  { name: "Nguyễn A", title: "Học sinh xuất sắc", img: "picture/p1.jpg", note: "HSG Toán toàn quốc" },
-  { name: "Trần B", title: "Tài năng nghệ thuật", img: "picture/p2.jpg", note: "Giải nhì văn nghệ" },
-  { name: "Lê C", title: "Thủ khoa lớp", img: "picture/p3.jpg", note: "Điểm TB cao nhất" }
+  {
+    name: "Nguyễn Anh Duy",
+    title: "HSG Toán",
+    img: "picture/p1.jpg",
+    note: "Nhất Thành phố",
+  },
+  {
+    name: "...",
+    title: ".....",
+    img: "picture/p2.jpg",
+    note: "...",
+  },
+  {
+    name: "...",
+    title: "....",
+    img: "picture/p3.jpg",
+    note: "....",
+  },
 ];
 
 function renderHomepageShowcase() {
@@ -62,11 +79,36 @@ function renderHomepageShowcase() {
 
 /* ---------- Book of profiles (5 authors + 51 students) ---------- */
 const authors = [
-  { name: "Thầy A", role: "Giáo viên chủ nhiệm", img: "picture/teacher1.jpg", bio: "Giáo viên Toán" },
-  { name: "Cô B", role: "Giáo viên Văn", img: "picture/teacher2.jpg", bio: "Giáo viên Văn" },
-  { name: "Thầy C", role: "Giáo viên Anh", img: "picture/teacher3.jpg", bio: "Giáo viên Anh" },
-  { name: "Cô D", role: "Giáo viên Lý", img: "picture/teacher4.jpg", bio: "Giáo viên Lý" },
-  { name: "Thầy E", role: "Giáo viên Hóa", img: "picture/teacher5.jpg", bio: "Giáo viên Hóa" }
+  {
+    name: "Cô Phùng Thị Hường",
+    role: "Giáo viên chủ nhiệm",
+    img: "picture/teacher1.jpg",
+    bio: "Giáo viên Vật lý",
+  },
+  {
+    name: "Cô ..",
+    role: "Giáo viên Văn",
+    img: "picture/teacher2.jpg",
+    bio: "Giáo viên Văn",
+  },
+  {
+    name: "Cô ",
+    role: "Giáo viên Anh",
+    img: "picture/teacher3.jpg",
+    bio: "Giáo viên Anh",
+  },
+  {
+    name: "Cô ...",
+    role: "Giáo viên Lý",
+    img: "picture/teacher4.jpg",
+    bio: "Giáo viên Lý",
+  },
+  {
+    name: "Thầy E",
+    role: "Giáo viên Hóa",
+    img: "picture/teacher5.jpg",
+    bio: "Giáo viên Hóa",
+  },
 ];
 
 const students = Array.from({ length: 51 }).map((_, i) => {
@@ -76,7 +118,7 @@ const students = Array.from({ length: 51 }).map((_, i) => {
     name: `Học sinh ${no}`,
     class: "12A4",
     note: `Mô tả ngắn cho HS ${no}`,
-    img: `picture/stu${(no % 10) + 1}.jpg`
+    img: `picture/stu${(no % 10) + 1}.jpg`,
   };
 });
 
@@ -139,9 +181,9 @@ function setupBookControls() {
 
 /* ---------- Achievements: tabs + timeline + countdown ---------- */
 const timelineEvents = [
-  { date: "2023-05-12", title: "Kỷ niệm 1", desc: "Sự kiện lớn 1" },
-  { date: "2024-01-20", title: "Tham dự giao lưu", desc: "Giao lưu văn nghệ" },
-  { date: "2024-11-10", title: "Hội thao", desc: "Cờ vua, kéo co" }
+  { date: "2023-01-9", title: "Kỷ niệm 1", desc: "....." },
+  { date: "2024-26-03", title: "Tham dự giao lưu", desc: "Giao lưu văn nghệ" },
+  { date: "2025-26-03", title: "Hội thao", desc: "Kéo co" },
 ];
 
 function renderTimeline() {
@@ -159,7 +201,9 @@ function renderTimeline() {
 function setupAchievementsTabs() {
   document.querySelectorAll(".subtab").forEach((btn) => {
     btn.addEventListener("click", () => {
-      document.querySelectorAll(".subtab").forEach((b) => b.classList.remove("active"));
+      document
+        .querySelectorAll(".subtab")
+        .forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
       const tab = btn.dataset.tab;
       const content = document.getElementById("tab-content");
@@ -181,7 +225,7 @@ function setupAchievementsTabs() {
 const examDates = [
   { name: "HSA đợt 1", day: 7, month: 3 },
   { name: "HSA đợt 2", day: 21, month: 3 },
-  { name: "THPT", day: 1, month: 6 }
+  { name: "THPT", day: 1, month: 6 },
 ];
 
 function getNextExam() {
@@ -221,17 +265,29 @@ function renderModernAchievements() {
   const el = document.getElementById("modern-achievements");
   if (!el) return;
   const items = [
-    { title: "Top HSG Toán", desc: "Học sinh đạt giải", img: "picture/award1.jpg" },
-    { title: "Văn nghệ xuất sắc", desc: "Sân khấu ấn tượng", img: "picture/award2.jpg" },
-    { title: "Tỉ lệ đỗ 100%", desc: "Kết quả tốt", img: "picture/award3.jpg" }
+    {
+      title: "HSG Toán",
+      desc: "Giải nhất",
+      img: "picture/award1.jpg",
+    },
+    {
+      title: "Văn nghệ",
+      desc: "Giải đặc biệt",
+      img: "picture/award2.jpg",
+    },
+    { title: "Tỉ lệ đỗ 100%", desc: "Khiêm tốn ", img: "picture/award3.jpg" },
   ];
-  el.innerHTML = items.map(it => `
+  el.innerHTML = items
+    .map(
+      (it) => `
     <div class="achievement-card">
       <img src="${it.img}" alt="${it.title}" />
       <h4>${it.title}</h4>
       <p class="caption">${it.desc}</p>
     </div>
-  `).join("");
+  `,
+    )
+    .join("");
 }
 
 /* ---------- Games & Horoscope ---------- */
@@ -248,7 +304,39 @@ function setupHoroscope() {
       "Hôm nay thuận lợi cho học hành.",
       "Cần cẩn trọng trong giao tiếp.",
       "Ngày thích hợp để khởi động dự án mới.",
-      "Chú ý sức khỏe, nghỉ ngơi đầy đủ."
+      "Chú ý sức khỏe, nghỉ ngơi đầy đủ.",
+      "Có thể gặp gỡ người bạn cũ.",
+      "Nên dành thời gian cho gia đình.",
+      "Công việc sẽ có bước tiến mới.",
+      "Hãy tin vào trực giác của mình.",
+      "Một cơ hội bất ngờ sẽ đến.",
+      "Nên tránh những quyết định lớn hôm nay.",
+      "Hãy dành thời gian cho sở thích cá nhân.",
+      "Có thể có tin vui từ người thân.",
+      "Ngày thích hợp để giải quyết mâu thuẫn.",
+      "Hãy mở lòng với những ý tưởng mới.",
+      "Cần chú ý đến chi tiêu tài chính.",
+      "Một ngày bình yên và thư giãn.",
+      "Có thể nhận được lời mời tham gia sự kiện.",
+      "Hãy dành thời gian cho bản thân.",
+      "Một ngày tốt để học hỏi điều mới.",
+      "Có thể gặp khó khăn nhỏ trong công việc.",
+      "Hãy tin tưởng vào khả năng của mình.",
+      "Một ngày đầy cảm hứng sáng tạo.",
+      "Nên dành thời gian cho bạn bè.",
+      "Có thể có cơ hội du lịch hoặc khám phá.",
+      "Hãy chú ý đến sức khỏe tinh thần.",
+      "Một ngày tốt để bắt đầu thói quen mới.",
+      "Có thể có tin vui trong tình cảm.",
+      "Hãy dành thời gian cho những người thân yêu.",
+      "Một ngày tốt để giải quyết công việc tồn đọng.",
+      "Có thể có cơ hội học hỏi từ người khác.",
+      "Hãy tin tưởng vào bản thân và đi theo con đường của mình.",
+      "Một ngày tốt để thể hiện bản thân.",
+      "Có thể có cơ hội hợp tác mới.",
+      "Hãy chú ý đến cảm xúc của mình.",
+      "Một ngày tốt để kết nối với người khác.",
+      "Có thể có cơ hội thăng tiến trong công việc.",
     ];
     const msg = msgs[Math.floor(Math.random() * msgs.length)];
     out.innerHTML = `<p>Chúc mừng! Dựa trên ngày sinh ${bd}: ${msg}</p>`;
